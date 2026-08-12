@@ -18,6 +18,7 @@ public class TutorService {
     public List<TutorDTO> listarTodos(){
         return repository.findAll().stream().map(TutorDTO::new).toList();
     }
+
     public void cadastrar(CadastroTutorDTO dados){
         repository.save(new Tutor(dados));
     }

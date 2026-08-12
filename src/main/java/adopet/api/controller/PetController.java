@@ -30,12 +30,9 @@ public class PetController {
     @PostMapping
     @Transactional
     public ResponseEntity<String> cadastrar(@RequestPart @Valid CadastroPetDTO dados,
-                                            @RequestParam MultipartFile imagem){
-        try {
-            service.cadastrar(dados, imagem);
-        }catch (IOException ex){
-            ResponseEntity.badRequest().body(ex.getMessage());
-        }
+                                            @RequestParam MultipartFile imagem) throws IOException{
+        service.cadastrar(dados, imagem);
+
         return ResponseEntity.ok().build();
     }
 }

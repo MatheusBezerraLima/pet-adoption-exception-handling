@@ -28,11 +28,9 @@ public class AdocaoService {
     private AdocaoRepository adocaoRepository;
 
     public List<AdocaoDTO> listarTodos(){
-
         return adocaoRepository.findAll().stream().map(AdocaoDTO::new).toList();
     }
     public AdocaoDTO listar(Long id){
-
         return adocaoRepository.findById(id).stream().findFirst().map(AdocaoDTO::new).orElse(null);
     }
 

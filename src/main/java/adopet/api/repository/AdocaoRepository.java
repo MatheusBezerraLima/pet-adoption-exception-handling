@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotNull;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AdocaoRepository extends JpaRepository<Adocao,Long> {
-
     Boolean existsByPetIdAndStatus(@NotNull Long idPet, StatusAdocao statusAdocao);
 
     Integer countByTutorIdAndStatus(@NotNull Long idTutor, StatusAdocao statusAdocao);
